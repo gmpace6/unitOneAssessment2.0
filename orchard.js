@@ -49,7 +49,7 @@ let totalAcres = 0
 let totalAcres2 = fujiAcres.concat(galaAcres, pinkAcres)
 
 for(let i = 0; i < totalAcres2.length; i++) {
-    totalAcres = totalAcres + totalAcres2[i]
+    totalAcres += totalAcres2[i]
 }
 
 console.log("Answer 1 ------------------")
@@ -137,72 +137,72 @@ console.log(fujiTons)
 console.log(galaTons)
 console.log(pinkTons)
 
-
+// I was thinking these three separate loops would be longer, but then I was pleasantly surprised how easy the were once I started coding them. I was also pleased to see that in my original original assessment, in which I'd needed to rely heavily on my notes and previous labs; I'd ende up coding this the exact same way.
 
 
 
 // PROBLEM 5
 
 /*
-    Next, calculate the total number of 
-    pounds picked per variety.
-
-    You'll need to add up the tons per
-    each variety and convert the number 
-    into pounds -- store that number in
-    the variables given below. 
-
+    Next, calculate the total number of pounds picked per variety.
+    You'll need to add up the tons per each variety and convert the number into pounds -- store that number in the variables given below. 
     Log each of the values to the console.
-
     Hint: there are 2000 pounds in a ton.
 */
 
-// CODE HERE 
+let fujiPounds = 0
+let galaPounds = 0
+let pinkPounds = 0
 
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
+for(let i = 0; i < fujiTons.length; i++) {
+    fujiPounds += fujiTons[i] * 2000
+}
+for(let i = 0; i < galaTons.length; i++) {
+    galaPounds += galaTons[i] * 2000
+}
+for(let i = 0; i < pinkTons.length; i++) {
+    pinkPounds += pinkTons[i] * 2000
+}
 
+console.log("Answer 5 ------------------")
+console.log(fujiPounds)
+console.log(galaPounds)
+console.log(pinkPounds)
 
-
+// This one was pretty simple; it was basically problem 1 with some more math.
 
 
 
 // PROBLEM 6
 
 /*
-    Now that you know the total pounds
-    per variety, use the prices given 
-    at the beginning of this file to 
-    figure out how much you'll make 
-    from selling each type of apple. 
-
-    The prices are per pound and are 
-    written in cents. 
-
-    Log each of the profits to the 
-    console. 
+    Now that you know the total pounds per variety, use the prices given at the beginning of this file to figure out how much you'll make from selling each type of apple.
+    The prices are per pound and are written in cents. 
+    Log each of the profits to the console. 
 */
 
-// CODE HERE
+let fujiProfit = fujiPounds * fujiPrice
+let galaProfit = galaPounds * galaPrice
+let pinkProfit = pinkPounds * pinkPrice
 
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
+console.log("Answer 6 ------------------")
+console.log('$' + fujiProfit)
+console.log('$' + galaProfit)
+console.log('$' + pinkProfit)
 
-
-
-
+// This was the easiest one yet, as there were no instructions to specifically do anything more complex.
 
 
 // PROBLEM 7
 
 /*
-    Add up all your profits and save 
-    the number to a variable called 
-    `totalProfit`.
-
+    Add up all your profits and save the number to a variable called `totalProfit`.
     Log `totalProfit` to the console.
 */
+const totalProfit = fujiProfit + galaProfit + pinkProfit
 
-// CODE HERE
+console.log("Answer 7 ------------------")
+console.log('$' + totalProfit)
+
+// Same as before, I just did the math since there were no instuctions to do it any other way.
+// I hope you like my console.log "Answer # -----------" formatting!
