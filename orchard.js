@@ -40,16 +40,22 @@ const pinkPrice = .55
 // PROBLEM 1
 
 /*
-    Using for loop, calculate the total number
-    of acres picked for the entire week.
-
-    Save the number to a variable called 
-    `totalAcres`.
-
+    Using for loop, calculate the total number of acres picked for the entire week.
+    Save the number to a variable called  `totalAcres`.
     Log `totalAcres` to the console.
 */
 
-// CODE HERE
+let totalAcres = 0
+let totalAcres2 = fujiAcres.concat(galaAcres, pinkAcres)
+
+for(let i = 0; i < totalAcres2.length; i++) {
+    totalAcres = totalAcres + totalAcres2[i]
+}
+
+console.log("Answer 1 ------------------")
+console.log(totalAcres)
+
+// I started out by thinking I would need to run 3 different for-loops in problem 1, but then I referred to my previous Assessment 1 and was reminded that all three arrays could be concatenated into a single one, which made the rest of the problem much easier.
 
 
 
@@ -58,18 +64,17 @@ const pinkPrice = .55
 // PROBLEM 2
 
 /*
-    Using `totalAcres`, calculate the average 
-    number of acres picked per day. 
-
-    Save the answer to a variable called 
-    `averageDailyAcres`. 
-
+    Using `totalAcres`, calculate the average number of acres picked per day. 
+    Save the answer to a variable called `averageDailyAcres`. 
     Log `averageDailyAcres` to the console.
 */
 
-// CODE HERE
+const averageDailyAcres = totalAcres / fujiAcres.length
 
+console.log("Answer 2 ------------------")
+console.log(averageDailyAcres)
 
+// Not much to describe here for problem 2; it was pretty easy math. I started by putting "const averageDailyAcres = totalAcres / 7" but then again referred to my previous assessment 1 to see if I'd done anything different last time, and realized it was better to use the length of an array instead of a fixed number, to allow more flexibility if the length of the workweek changed.
 
 
 
@@ -77,68 +82,60 @@ const pinkPrice = .55
 
 /*
     We have provided 2 variables below. 
-    
-    The `acresLeft` variable is the number 
-    of acres that still have apples left. 
-    
-    The `days` variable represents how 
-    many more days of work are left. It's 
-    initialized at 0 because we're going 
-    to be using it as a counter.
-    
-    Write a while loop that will continue to run
-    while `acresLeft` is above 0. 
-    
+    The `acresLeft` variable is the number of acres that still have apples left. 
+    The `days` variable represents how many more days of work are left. It's initialized at 0 because we're going to be using it as a counter.
+    Write a while loop that will continue to run while `acresLeft` is above 0. 
     On each iteration of the loop:
     - add 1 to the `days` variable
     - subtract your daily average from the number of acres left
-
     Outside the loop, log `days` to the console.
-
-    Note: This is not the most efficient way to
-    calculate this number. But! It is a great
-    way to get a whole number without using 
-    any Math methods. 
-
+    Note: This is not the most efficient way to calculate this number. But! It is a great way to get a whole number without using any Math methods. 
 */
 
 let acresLeft = 174 
 let days = 0
 
-// CODE HERE
+while(acresLeft > 0) {
+    acresLeft = acresLeft -= averageDailyAcres
+    days += 1
+    console.log(`${acresLeft} acres left, ${days} days worked`)
+}
+
+console.log("Answer 3 ------------------")
+console.log(days)
+
+// Once again, I started by hard-coding in a number. Once I'd finished I referred to my previous assessment 1 to see if I'd done anything different last time, and realized it was better to replace "7" with "averageDailyAcres" in the while-loop. I couldn't resist adding the extra console log inside the loop, to watch what was happening in the background. 
 
 
 
 // PROBLEM 4
 
 /*
-    Your next task is to create 3 arrays
-    that list the daily amount of apples 
-    picked, in tons, for each variety. 
-    
+    Your next task is to create 3 arrays that list the daily amount of apples picked, in tons, for each variety.
     Each acre yields 6.5 tons of apples.
-
-    Use the variables below to store 
-    your new arrays. Make sure that you
-    don't modify the original arrays 
-    on lines 36 - 38.
-
+    Use the variables below to store your new arrays. Make sure that you don't modify the original arrays on lines 36 - 38.
     Log each of your arrays to the console.
-
-    Hint: you can use the slice method 
-    to make copies of the arrays and 
-    then loop the copies. You could also
-    make empty arrays, loop the old ones
-    and use the push method to add new 
-    values to the new arrays.
+    Hint: you can use the slice method to make copies of the arrays and then loop the copies. You could also make empty arrays, loop the old ones and use the push method to add new values to the new arrays.
 */
 
-// CODE HERE
+let fujiTons = []
+let galaTons = []
+let pinkTons = []
 
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
+for(let i = 0; i < fujiAcres.length; i++) {
+    fujiTons.push(6.5 * fujiAcres[i])
+}
+for(let i = 0; i < galaAcres.length; i++) {
+    galaTons.push(6.5 * galaAcres[i])
+}
+for(let i = 0; i < pinkAcres.length; i++) {
+    pinkTons.push(6.5 * pinkAcres[i])
+}
 
+console.log("Answer 4 ------------------")
+console.log(fujiTons)
+console.log(galaTons)
+console.log(pinkTons)
 
 
 
